@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+/**
+ * EXPLAINER: Neubrutalist Color Palette
+ *
+ * We override the default color scheme to match neubrutalism:
+ * - Beige/cream background (#F5F5DC)
+ * - Black text and borders
+ * - No dark mode (neubrutalism is bold and consistent!)
+ *
+ * The palette is bright and high-contrast on purpose.
+ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F5F5DC; /* Beige/cream - softer than pure white */
+  --foreground: #000000; /* Pure black - maximum contrast */
 }
 
 @theme inline {
@@ -12,15 +23,31 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/**
+ * CHALLENGE: Experiment with the color palette!
+ *
+ * Try these alternatives:
+ * - Pure white background: #FFFFFF
+ * - Light yellow: #FFFACD
+ * - Light pink: #FFE4E1
+ * - Light blue: #E0F7FF
+ *
+ * Neubrutalism works with any light, saturated background!
+ */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/**
+ * Ensure full viewport height on mobile
+ */
+html, body {
+  height: 100%;
+  width: 100%;
 }
